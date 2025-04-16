@@ -15,8 +15,10 @@ app.use(helmet({
         directives: {
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
             "img-src": ["'self'", "data:", "https:"],
-            "script-src": ["'self'", "'unsafe-inline'"],
-            "style-src": ["'self'", "'unsafe-inline'", "https:"],
+            "script-src": ["'self'", "'unsafe-inline'", "https:", "http:"],
+            "style-src": ["'self'", "'unsafe-inline'", "https:", "http:"],
+            "font-src": ["'self'", "https:", "data:", "http:"],
+            "default-src": ["'self'", "https:", "http:", "data:", "blob:"],
         },
     },
 }));
@@ -31,22 +33,12 @@ app.set('views', path.join(__dirname, 'views'));
 // Use EJS Layouts
 app.use(expressLayouts);
 app.set('layout', 'layout');
+app.set("layout extractScripts", true);
+app.set("layout extractStyles", true);
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Create email transporter
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'solutionpathconsulting.ro@gmail.com',
-        pass: process.env.EMAIL_PASSWORD // We'll set this up in .env file
-    }
-});
 
 // Routes
 app.get('/', (req, res) => {
@@ -148,6 +140,18 @@ ${message}
     } catch (error) {
         console.error('Error sending email:', error);
         res.redirect('/contact?error=true');
+    }
+});
+
+// Serve static files (moved after routes)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Create email transporter
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'solutionpathconsulting.ro@gmail.com',
+        pass: process.env.EMAIL_PASSWORD // We'll set this up in .env file
     }
 });
 
