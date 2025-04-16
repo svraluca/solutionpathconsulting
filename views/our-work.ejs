@@ -1,0 +1,162 @@
+<section class="portfolio-hero">
+    <div class="container">
+        <h1>Our Work</h1>
+        <p class="section-subtitle">Discover our latest projects and success stories</p>
+    </div>
+</section>
+
+<section class="portfolio-grid">
+    <div class="container">
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Websites</button>
+            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            <button class="filter-btn" data-filter="design">UI/UX Design</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Festino.ai Project -->
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="/images/portfolio/Fetino.ai.png" alt="Festino.ai Platform">
+                    <div class="image-overlay">
+                        <button class="view-image-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Festino.ai - Event Planning Platform</h3>
+                    <p>An AI-powered platform revolutionizing event planning with smart scheduling, vendor management, and automated planning assistance. Where AI Meets Celebration!</p>
+                    <div class="project-tags">
+                        <span>Node.js</span>
+                        <span>Firebase</span>
+                        <span>Google Cloud Functions</span>
+                        <span>Cloud Storage</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acum-Acum App -->
+            <div class="project-card" data-category="mobile">
+                <div class="project-image">
+                    <img src="/images/portfolio/Acumacum-app.png" alt="Acum-Acum Service Marketplace">
+                    <div class="image-overlay">
+                        <button class="view-image-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Acum-Acum - Service Marketplace</h3>
+                    <p>A comprehensive marketplace app connecting Romanian customers with local service providers. Book and manage various services instantly, from cleaning to maintenance.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase</span>
+                        <span>Cloud Functions</span>
+                        <span>Google Maps API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fitness Platform -->
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="/images/portfolio/Fitness-webiste.png" alt="Fitness Website Platform">
+                    <div class="image-overlay">
+                        <button class="view-image-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Fitness Influencer Platform</h3>
+                    <p>A comprehensive platform enabling fitness influencers to sell their training programs and connect with their audience.</p>
+                    <div class="project-tags">
+                        <span>Node.js</span>
+                        <span>HTML/CSS</span>
+                        <span>Firebase</span>
+                        <span>Cloud Storage</span>
+                        <span>Payment API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="mobile">
+                <div class="project-image">
+                    <img src="/images/portfolio/fitnessapp.jpg" alt="Fitness Mobile App">
+                    <div class="image-overlay">
+                        <button class="view-image-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>INFLUFIT Mobile App</h3>
+                    <p>Train and diet like your favorite influencer with personalized workout and nutrition programs.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase</span>
+                        <span>Cloud Functions</span>
+                        <span>In-App Purchases</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RoActiune Projects -->
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="/images/portfolio/RoActiune-website.png" alt="RoActiune Platform">
+                    <div class="image-overlay">
+                        <button class="view-image-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>RoActiune Platform</h3>
+                    <p>A civic platform connecting Romanian citizens with public institutions for efficient issue reporting and resolution tracking.</p>
+                    <div class="project-tags">
+                        <span>Node.js</span>
+                        <span>HTML/CSS</span>
+                        <span>Firebase</span>
+                        <span>Cloud Functions</span>
+                        <span>Google Maps API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="mobile">
+                <div class="project-image">
+                    <img src="/images/portfolio/roactiune-app.png" alt="RoActiune Mobile App">
+                    <div class="image-overlay">
+                        <button class="view-image-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>RoActiune Mobile App</h3>
+                    <p>Mobile application enabling citizens to report urban issues and track resolution progress in real-time.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase</span>
+                        <span>Cloud Functions</span>
+                        <span>Location Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Modal -->
+        <div id="imageModal" class="modal">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-content" src="" alt="">
+            <div id="modalCaption"></div>
+        </div>
+    </div>
+</section> 

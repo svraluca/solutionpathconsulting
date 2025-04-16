@@ -1,0 +1,32 @@
+{
+  "name": "solutionpathconsulting",
+  "version": "1.0.0",
+  "description": "Professional website for SolutionPath Consulting",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "prod": "NODE_ENV=production node app.js",
+    "build": "mkdir -p dist && cp -r public/* dist/ && cp -r views dist/"
+  },
+  "keywords": [
+    "consulting",
+    "IT",
+    "business",
+    "technology"
+  ],
+  "author": "SolutionPath Consulting",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.8.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "helmet": "^8.1.0",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
